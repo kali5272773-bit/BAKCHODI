@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808"><meta name="description" content="COOKED — infinite desi roast game">
+<title>COOKED 💀 — Advanced Edition</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="fx"></div>
+<div class="app">
+<header><div class="logo">COOKED<span>💀</span></div><div class="topstats">🔥 <b id="score">0</b>% <span>•</span> LVL <b id="level">1</b></div></header>
+
+<section id="home" class="screen active">
+<div class="hero">
+<div class="badge">18+ DESI CHAOS • v2.0</div>
+<h1>HOW <em>COOKED</em><br>ARE YOU?</h1>
+<p>Truth. Dare. WYR. Confessions. Red flags. Contradictions. The machine remembers your bakchodi.</p>
+<div class="heroBtns"><button class="primary" onclick="startGame('mix')">START COOKING 🔥</button><button class="secondary" onclick="startGame('chaos')">⚡ CHAOS MODE</button></div>
+<div class="mini">No login • No backend • Your answers stay in this browser</div>
+</div>
+<div class="how"><div>01 <b>Answer</b><small>Every choice changes your profile.</small></div><div>02 <b>Get roasted</b><small>The roast adapts to your score.</small></div><div>03 <b>Survive</b><small>Unlock bosses, secrets & endings.</small></div></div>
+</section>
+
+<section id="game" class="screen">
+<div class="hud">
+<button class="icon" onclick="goHome()">←</button><div class="bar"><small id="round">ROUND 01</small><div><i id="progress"></i></div></div><button class="icon" onclick="toggleMute()" id="mute">🔊</button>
+</div>
+<div class="modebar"><button data-mode="mix">MIX</button><button data-mode="truth">TRUTH</button><button data-mode="dare">DARE</button><button data-mode="wyr">WYR</button><button data-mode="confess">CONFESS</button></div>
+<div class="gamegrid">
+<aside class="side"><div class="sidebox"><small>COOKED</small><strong id="bigScore">0%</strong><div class="meter"><i id="meter"></i></div></div><div class="sidebox"><small>BRAIN CELLS</small><strong id="brain">100</strong><div class="meter"><i id="brainbar"></i></div></div><div class="sidebox"><small>RED FLAGS</small><strong id="flags">0</strong></div><div class="sidebox"><small>STREAK</small><strong id="streak">0</strong></div><div class="sidebox"><small>ACHIEVEMENTS</small><strong id="ach">0/8</strong></div></aside>
+<main class="card"><div class="tag" id="tag">QUESTION</div><div id="boss" class="boss hidden">☠️ BOSS ROUND</div><h2 id="q">Loading...</h2><div id="choices" class="choices"></div>
+<div id="inputArea" class="inputArea hidden"><input id="answerInput" maxlength="160" placeholder="Type your honest answer…"><button class="primary" onclick="submitText()">LOCK IT IN 🔒</button></div>
+<div id="roast" class="roast hidden"><div class="roastHead">🔥 ROAST REPORT</div><p id="roastText"></p><div class="chips" id="chips"></div><button class="primary" onclick="nextRound()">MAKE IT WORSE →</button></div></main>
+</div>
+</section>
+
+<section id="result" class="screen">
+<div class="result">
+<div class="badge">OFFICIAL DAMAGE REPORT</div><div class="final" id="final">0%</div><h1 id="verdict">LIGHTLY TOASTED</h1><p id="finalText"></p>
+<div class="report"><div><small>DELULU</small><b id="rDelulu">0%</b></div><div><small>CHAOS</small><b id="rChaos">0%</b></div><div><small>RED FLAGS</small><b id="rFlags">0%</b></div><div><small>SELF CONTROL</small><b id="rControl">0%</b></div></div>
+<div class="achievements" id="achievements"></div>
+<button class="primary" onclick="shareResult()">📸 SHARE THE DAMAGE</button><button class="secondary" onclick="startGame('mix')">🔄 RUN IT BACK</button>
+</div>
+</section>
+</div>
+<div id="toast"></div>
+<script src="data/content.js"></script><script src="app.js"></script>
+</body></html>
